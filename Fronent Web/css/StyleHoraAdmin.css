@@ -1,0 +1,397 @@
+/* ============================================================
+   CHEERCLICK SYSTEMS — Categorías & Entrenadores
+   styles.css
+   ============================================================ */
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --rojo: #d71920;
+    --rojo-hover: #b8141a;
+    --rojo-light: #fdeaea;
+    --rojo-badge: #f9dede;
+
+    --sidebar-bg: #d71920;
+
+    --blanco: #ffffff;
+    --gris-fondo: #f5f5f5;
+    --gris-borde: #dcdcdc;
+
+    --texto-dark: #222222;
+    --texto-muted: #777777;
+
+    --sidebar-width: 62px;
+    --header-height: 55px;
+
+    --radius-card: 4px;
+
+    --sombra-card: none;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    background-color: var(--gris-fondo);
+    color: var(--texto-dark);
+    min-height: 100vh;
+}
+
+/* ── Sidebar (Barra2) ────────────────────────────────────── */
+.Barra2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 100vh;
+    background: #d71920;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 3px 0 10px rgba(0,0,0,.15);
+}
+
+/* ===========================
+   MENU HAMBURGUESA
+=========================== */
+
+.menu-icon{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+.menu-icon:hover{
+    background: rgba(255,255,255,.12);
+}
+
+.menu-icon span{
+    width: 22px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.menu-icon:hover span:nth-child(1){
+    transform: translateY(-2px);
+}
+
+.menu-icon:hover span:nth-child(3){
+    transform: translateY(2px);
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+.sidebar-menu{
+    width: 100%;
+    list-style: none;
+    margin-top: 15px;
+}
+
+.sidebar-menu li{
+    width: 100%;
+    margin: 12px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* BOTON */
+
+.sidebar-menu li a{
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    transition: all .3s ease;
+    position: relative;
+}
+
+/* ICONOS */
+
+.sidebar-menu li a img{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition:  .3s ease;
+}
+
+/* HOVER */
+
+.sidebar-menu li a:hover{
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.sidebar-menu li a:hover img{
+    opacity: 1;           
+    transform: scale(1.15); 
+}
+
+/* ACTIVO */
+
+/* BOTÓN ACTIVO */
+/* ESTILO GENERAL DEL ICONO ACTIVO */
+.sidebar-menu li.active a{
+   background: white;
+   box-shadow: 0 4px 12px rgba(0,0,0,.18);
+}
+
+/* ICONO NEGRO CUANDO ESTÁ ACTIVO */
+.sidebar-menu li.active a img{
+    filter: brightness(0);
+    opacity: 1;
+    transform: none;
+}
+
+/* BARRA INDICADORA LATERAL */
+.sidebar-menu li.active{
+    position: relative;
+}
+.sidebar-menu li.active::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 30px;
+    background: #000;
+    border-radius: 0 5px 5px 0;
+}
+
+/* ANIMACIÓN DE ENTRADA */
+
+.sidebar-menu li{
+    animation: aparecer .5s ease forwards;
+}
+.sidebar-menu li:nth-child(1){animation-delay:.1s;}
+.sidebar-menu li:nth-child(2){animation-delay:.15s;}
+.sidebar-menu li:nth-child(3){animation-delay:.2s;}
+.sidebar-menu li:nth-child(4){animation-delay:.25s;}
+.sidebar-menu li:nth-child(5){animation-delay:.3s;}
+.sidebar-menu li:nth-child(6){animation-delay:.35s;}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateX(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* TOOLTIP */
+
+.sidebar-menu li a::after{
+    content: attr(title);
+    position: absolute;
+    left: 55px;
+    background: #222;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-10px);
+    transition: .3s;
+}
+
+.sidebar-menu li a:hover::after{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ── Header (Barra1) ─────────────────────────────────────── */
+header {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+    height: var(--header-height);
+    background-color: var(--blanco);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.10);
+    z-index: 999;
+}
+.icon-link img{
+    height: 20px;
+    transition: all .3s ease;
+
+}
+.icon-link:hover img{
+    transform: scale(1.15);
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(17%)
+        sepia(99%)
+        saturate(4973%)
+        hue-rotate(350deg)
+        brightness(92%)
+        contrast(95%);
+}
+@keyframes pulseRojo{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.12);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* SOLO CAMPANA */
+
+header nav {
+    height: 100%;
+}
+
+.contenedor {
+    height: 100%;
+    padding: 0 20px;
+}
+
+.Barra1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Left: botones de sesión */
+.nav-btns {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-cerrar {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 16px;
+    border: 1.5px solid #cccccc;
+    background-color: var(--blanco);
+    color: #444444;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.btn-cerrar:hover {
+    border-color: var(--rojo);
+    color: var(--rojo);
+}
+
+.admin-btn {
+    display: inline-block;
+    padding: 7px 18px;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    cursor: default;
+    user-select: none;
+}
+
+/* Right: iconos + logo */
+#Logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.icon-link:hover {
+    color: var(--rojo);
+}
+
+.icon-link svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+    stroke: currentColor;
+}
+
+.logo-club {
+    display: flex;
+    align-items: center;
+}
+
+.logo-club img {
+    height: 38px;
+    width: 38px;
+    object-fit: cover;
+}
+
+/* ── Main content ────────────────────────────────────────── */
+.contenido {
+    margin-left: var(--sidebar-width);
+    margin-top: var(--header-height);
+    padding: 28px 30px 40px;
+    min-height: calc(100vh - var(--header-height));
+}
+
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1100px) {
+    .categorias-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    .categorias-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contenido {
+        padding: 20px 16px 32px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .horario-badge {
+        font-size: 10px;
+        white-space: normal;
+    }
+}
