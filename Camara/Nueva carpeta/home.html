@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page BTC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/x-icon" href="img/Logo-Club.png">
+</head>
+<body class="pagina-publica">
+
+    <header>
+        <!-- navbar con bootstrap 5.3 — fijo arriba, efecto blur -->
+        <!-- FIX 1: se eliminó justify-content-center del collapse y se usa ms-auto en la ul
+             para que el logo quede a la izquierda y los links a la derecha -->
+        <nav class="navbar navbar-expand-lg nav-publica fixed-top">
+            <div class="container-fluid nav-publica-contenedor">
+
+                <!-- logo con imagen y texto en dos líneas -->
+                <a class="navbar-brand logo" href="#hero">
+                    <img src="img/Logo-Club.png" alt="Logo">
+                    <div class="logo-texto">
+                        <span class="logo-club">CLUB DEPORTIVO</span>
+                        <span class="logo-nombre">BLOOD TIGERS CHEER</span>
+                    </div>
+                </a>
+
+                <!-- botón hamburguesa para móvil -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- FIX 1: se quitó justify-content-center; los links van a la derecha con ms-auto -->
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#hero">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#nosotros">Nosotros</a>
+                        </li>
+
+                        <!-- dropdown de programas con bootstrap -->
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Programas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#servicios">Servicios</a></li>
+                                <li><a class="dropdown-item" href="#niveles">Niveles</a></li>
+                                <li><a class="dropdown-item" href="#horarios">Horarios</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#footer">Contacto</a>
+                        </li>
+
+                        <!-- botón de iniciar sesión separado visualmente -->
+                        <li class="nav-item ms-lg-3">
+                            <a class="nav-link btn-nav-sesion" href="panel-acceso.html">
+                                Iniciar sesión
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- sección principal -->
+        <section id="hero">
+            <div class="contenedor hero-layout">
+                <div class="hero-contenido">
+                    <h1>
+                        <span class="hero-titulo-club">CLUB DEPORTIVO</span>
+                        <span class="hero-titulo-nombre">BLOOD TIGERS CHEER</span>
+                    </h1>
+
+                    <p>
+                        Supera tus límites. Vive el cheerleading. En Blood Tigers Cheer entrenas,
+                        compites y creces no solo como deportista, sino como persona integral,
+                        en un entorno que impulsa tu disciplina y confianza.
+                    </p>
+
+                    <div class="hero-botones">
+                        <a href="panel-acceso.html?view=registro" class="btn btn-primario">Registrarse</a>
+                        <a href="panel-acceso.html" class="btn btn-secundario">Iniciar sesión</a>
+                    </div>
+
+                    <div class="logros">
+                        <div>
+                            <h2>5+</h2>
+                            <p>Años de experiencia</p>
+                        </div>
+                        <div>
+                            <h2>5</h2>
+                            <p>Niveles de competencia</p>
+                        </div>
+                        <div>
+                            <h2>10+</h2>
+                            <p>Títulos ganados</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-imagen">
+                    <img src="img/equipo-blood-tigers.jpg" alt="Equipo Blood Tigers Cheer">
+                </div>
+            </div>
+        </section>
+
+        <!-- sección nosotros -->
+        <section id="nosotros">
+            <div class="contenedor">
+                <div class="seccion-titulo">
+                    <h1>¿QUIÉNES SOMOS?</h1>
+                </div>
+
+                <div class="nosotros-layout">
+                    <div class="nosotros-info">
+                        <h2>MÁS QUE UN CLUB,<br>UNA FAMILIA</h2>
+                        <p>Blood Tigers Cheer es un club deportivo comprometido con el desarrollo integral de cada atleta, combinando disciplina, trabajo en equipo y pasión por el cheerleading.</p>
+
+                        <div class="nosotros-imagen">
+                            <img src="img/blood-tigers-competencia.jpg" alt="Equipo Blood Tigers Cheer">
+                            <div class="historia-tarjeta">
+                                <h3>5+</h3>
+                                <p>Años de Historia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nosotros-valores">
+                        <article class="valor-tarjetas">
+                            <img src="img/objetivo.svg" alt="Objetivos">
+                            <div class="valor-info">
+                                <h3>Entrenamiento de Élite</h3>
+                                <p>Metodología profesional adaptada a cada nivel desde formativo hasta competencia nacional.</p>
+                            </div>
+                        </article>
+                        <article class="valor-tarjetas">
+                            <img src="img/manos.svg" alt="Apretón de manos">
+                            <div class="valor-info">
+                                <h3>Trabajo en Equipo</h3>
+                                <p>Fomentamos respeto, compañerismo y liderazgo dentro y fuera de la pista.</p>
+                            </div>
+                        </article>
+                        <article class="valor-tarjetas">
+                            <img src="img/podio.svg" alt="Podio">
+                            <div class="valor-info">
+                                <h3>Competencia de Alto Nivel</h3>
+                                <p>Participamos en torneos regionales y nacionales con rutinas de nivel internacional.</p>
+                            </div>
+                        </article>
+                        <article class="valor-tarjetas">
+                            <img src="img/fuerte.svg" alt="Brazo fuerte">
+                            <div class="valor-info">
+                                <h3>Desarrollo Integral</h3>
+                                <p>Formamos atletas seguros, disciplinados y comprometidos con sus metas.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- sección servicios -->
+        <section id="servicios">
+            <div class="contenedor">
+                <div class="servicios-contenido">
+                    <div class="seccion-titulo">
+                        <h1>SERVICIOS</h1>
+                    </div>
+                    <h2>NUESTROS SERVICIOS</h2>
+                    <p>En Blood Tigers preparamos atletas completos, fuertes y disciplinados. A través de nuestras diferentes áreas de entrenamiento,<br>garantizamos un proceso técnico y seguro adaptado a todas las edades y niveles de rendimiento.</p>
+
+                    <div class="servicios-valores">
+                        <article class="servicio-tarjetas">
+                            <img src="img/BTC-salto.jpg" alt="Foto Blood Tigers Cheer Salto">
+                            <h2>Acrobacia</h2>
+                            <p>Construimos elevaciones y lanzamientos espectaculares basados en la técnica y el control. Sincronizamos la fuerza de nuestro equipo para crear pirámides sólidas y transiciones fluidas en el aire. Hacemos que cada ejecución sea limpia y segura, demostrando el resultado de nuestra disciplina y confianza colectiva.</p>
+                        </article>
+                        <article class="servicio-tarjetas">
+                            <img src="img/BTC-competencia.jpg" alt="Foto Blood tigers cheer reunidos">
+                            <h2>Coreografía</h2>
+                            <p>El momento de brillar y conectar en la pista. Creamos secuencias visuales coordinadas que combinan baile, sincronía y actitud, convirtiendo cada bloque musical en un espectáculo memorable para los jueces.</p>
+                        </article>
+                        <article class="servicio-tarjetas">
+                            <div class="competencias-logos">
+                                <img src="img/BTC- campeones.jpg" alt="Foto Blood Tigers Cheer campeones">
+                            </div>
+                            <h2>Competencias</h2>
+                            <p>Participamos como club en torneos locales y nacionales, representando a Bogotá en el mundo del cheerleading. Cada atleta tiene la oportunidad de demostrar su progreso en escenarios reales.</p>
+                        </article>
+                        <article class="servicio-tarjetas">
+                            <img src="img/BTC-piramides.jpg" alt="Foto Blood Tigers Cheer piramide">
+                            <h2>Gimnasia</h2>
+                            <p>Desarrollamos la potencia, flexibilidad y técnica de ejecución en acrobacias de suelo y saltos. Trabajamos desde las bases posturales hasta giros avanzados para garantizar ejecuciones limpias, estables y seguras en cada rutina.</p>
+                        </article>
+                        <article class="servicio-tarjetas">
+                            <img src="img/BTC-universal.jpg" alt="Foto Blood Tigers Cheer competencia">
+                            <h2>Partner</h2>
+                            <p>Entrenamos habilidades de partner y grupos acrobáticos, fortaleciendo la confianza, coordinación y sincronización entre los atletas. Esta unión es la base de nuestro éxito en el escenario.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- sección niveles -->
+        <section id="niveles">
+            <div class="contenedor">
+                <div class="contenido-niveles">
+                    <div class="seccion-titulo">
+                        <h1>Nuestras Divisiones</h1>
+                    </div>
+                    <h2>5 NIVELES DE COMPETENCIA</h2>
+                    <p>Desde quienes dan sus primeros pasos hasta los atletas de alto rendimiento.<br>Hay un equipo Blood Tigers para cada etapa de tu camino</p>
+
+                    <div class="niveles-valores">
+                        <article class="nivel-tarjetas">
+                            <header class="tarjeta-encabezado">
+                                <h3>INICIO</h3>
+                                <h4>NIVEL FORMATIVO KING</h4>
+                                <p>El punto de partida ideal. Aprende las bases del cheerleading en un ambiente seguro</p>
+                            </header>
+                            <div class="nivel-entrenador">
+                                <img src="img/entrenador.png" alt="Entrenador">
+                                <p>Jonathan Cruz</p>
+                            </div>
+                        </article>
+                        <article class="nivel-tarjetas">
+                            <header class="tarjeta-encabezado">
+                                <h3>NIVEL 1</h3>
+                                <h4>QUEENS</h4>
+                                <p>Desarrollo de habilidades fundamentales con enfoque en coordinación, técnico y trabajo en equipo</p>
+                            </header>
+                            <div class="nivel-entrenador">
+                                <img src="img/entrenadora.png" alt="Entrenadora">
+                                <p>Alexandra Rivera</p>
+                            </div>
+                        </article>
+                        <article class="nivel-tarjetas">
+                            <header class="tarjeta-encabezado">
+                                <h3>NIVEL 2</h3>
+                                <h4>PRINCESS</h4>
+                                <p>Categoría nivel 2 con formación técnica sólida, expresión y disciplina como pilares centrales</p>
+                            </header>
+                            <div class="nivel-entrenador">
+                                <img src="img/entrenadora.png" alt="Entrenadora">
+                                <p>Yari Guitirrez</p>
+                            </div>
+                        </article>
+                        <article class="nivel-tarjetas">
+                            <header class="tarjeta-encabezado">
+                                <h3>NIVEL 3</h3>
+                                <h4>MAGIC</h4>
+                                <p>Acrobacias avanzadas, stunts de nivel 3 y rutinas de alto impacto para competencia regional.</p>
+                            </header>
+                            <div class="nivel-entrenador">
+                                <img src="img/entrenador.png" alt="Entrenador">
+                                <p>Stuard Reyes</p>
+                            </div>
+                        </article>
+                        <article class="nivel-tarjetas">
+                            <header class="tarjeta-encabezado">
+                                <h3>NIVEL 4</h3>
+                                <h4>BLOOD TIGERS</h4>
+                                <p>Nuestro equipo insignia. Atletas seleccionados que representan el club en competencias nacionales e internacionales.</p>
+                            </header>
+                            <div class="nivel-entrenador">
+                                <img src="img/entrenador.png" alt="Entrenador">
+                                <p>Ronald Linares</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- sección horarios -->
+        <section id="horarios">
+            <div class="contenedor">
+                <div class="horarios-contenido">
+                    <div class="seccion-titulo">
+                        <h1>PLANIFICACIÓN</h1>
+                    </div>
+                    <h2>HORARIOS DE ENTRENAMIENTO</h2>
+                    <p>Cada entrenador y nivel tiene sus horarios definidos. ¡Encuentra el tuyo y únete al equipo!</p>
+
+                    <div class="horario-valores">
+                        <article class="horario-tarjeta">
+                            <header class="tarjeta-encabezado">
+                                <h3>Nivel Inicio | Formativo King</h3>
+                                <h4>Entrenador: Jonathan Cruz</h4>
+                            </header>
+                            <ul class="lista-horarios">
+                                <li><p class="dia">Lunes</p><p class="hora">4:00 - 6:00 PM</p></li>
+                                <li><p class="dia">Martes</p><p class="hora">4:00 - 6:00 PM</p></li>
+                                <li><p class="dia">Viernes</p><p class="hora">4:00 - 6:00 PM</p></li>
+                            </ul>
+                        </article>
+                        <article class="horario-tarjeta">
+                            <header class="tarjeta-encabezado">
+                                <h3>Nivel 1 | Queens</h3>
+                                <h4>Entrenadora: Alexandra Rivera</h4>
+                            </header>
+                            <ul class="lista-horarios">
+                                <li><p class="dia">Martes</p><p class="hora">6:00 - 8:00 PM</p></li>
+                                <li><p class="dia">Jueves</p><p class="hora">6:00 - 8:00 PM</p></li>
+                                <li><p class="dia">Sábado</p><p class="hora">6:00 - 8:00 PM</p></li>
+                            </ul>
+                        </article>
+                        <article class="horario-tarjeta">
+                            <header class="tarjeta-encabezado">
+                                <h3>Nivel 2 | Princess</h3>
+                                <h4>Entrenadora: Yari Gutierrez</h4>
+                            </header>
+                            <ul class="lista-horarios">
+                                <li><p class="dia">Martes</p><p class="hora">6:00 - 8:00 PM</p></li>
+                                <li><p class="dia">Viernes</p><p class="hora">6:00 - 8:00 PM</p></li>
+                                <li><p class="dia">Sábado</p><p class="hora">10:00 - 12:00 PM</p></li>
+                            </ul>
+                        </article>
+                        <article class="horario-tarjeta">
+                            <header class="tarjeta-encabezado">
+                                <h3>Nivel 3 | Magic</h3>
+                                <h4>Entrenador: Stuard Reyes</h4>
+                            </header>
+                            <ul class="lista-horarios">
+                                <li><p class="dia">Lunes</p><p class="hora">6:00 - 8:00 PM</p></li>
+                                <li><p class="dia">Miércoles</p><p class="hora">6:00 - 8:00 PM</p></li>
+                                <li><p class="dia">Sábado</p><p class="hora">4:00 - 6:00 PM</p></li>
+                            </ul>
+                        </article>
+                        <article class="horario-tarjeta">
+                            <header class="tarjeta-encabezado">
+                                <h3>Nivel 4 | Blood Tigers</h3>
+                                <h4>Entrenador: Ronald Linares</h4>
+                            </header>
+                            <ul class="lista-horarios">
+                                <li><p class="dia">Miércoles</p><p class="hora">8:00 - 10:00 PM</p></li>
+                                <li><p class="dia">Sábado</p><p class="hora">8:00 - 10:00 PM</p></li>
+                                <li><p class="dia">Domingo</p><p class="hora">8:00 - 10:00 AM</p></li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section id="footer">
+            <div class="contenedor">
+                <div class="footer-contenido">
+
+                    <!-- columna izquierda: logo, contacto, explorar y redes -->
+                    <div class="footer-columnas">
+                        <div class="footer-columna">
+                            <img src="img/Logo-Club.png" alt="Logo Blood Tigers">
+                            <p>Blood Tigers Cheer</p>
+                            <p>Disciplina • Pasión • Trabajo en Equipo</p>
+                        </div>
+                        <div class="footer-columna">
+                            <h3>Contacto</h3>
+                            <p><a href="mailto:bloodtigerscheer@gmail.com" target="_blank"><img src="img/mail.svg" alt="Correo">bloodtigerscheer@gmail.com</a></p>
+                            <p><a href="tel:+573044740671" target="_blank"><img src="img/telefono.svg" alt="Teléfono">+57 304 474 06 71</a></p>
+                        </div>
+                        <div class="footer-columna">
+                            <h3>Explorar</h3>
+                            <ul>
+                                <li><a href="#nosotros">Nosotros</a></li>
+                                <li><a href="#servicios">Servicios</a></li>
+                                <li><a href="#niveles">Niveles</a></li>
+                                <li><a href="#horarios">Horarios</a></li>
+                                <li><a href="#inscripcion">Inscripción</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-columna">
+                            <h3>Redes Sociales</h3>
+                            <ul>
+                                <li><a href="https://www.instagram.com/bloodtigerscheer?igsh=N25wOHRrcncxZHd3" target="_blank"><img src="img/instagram.png" alt="Instagram">Instagram</a></li>
+                                <li><a href="https://www.facebook.com/share/199JfMndTT/" target="_blank"><img src="img/facebook.png" alt="Facebook">Facebook</a></li>
+                                <li><a href="https://www.tiktok.com/@bloodtigerscheer_?_r=1&_t=ZS-97DUZ4Se2su" target="_blank"><img src="img/tik-tok.png" alt="TikTok">TikTok</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- columna derecha: "cómo llegar" como encabezado del mapa, mapa más compacto debajo -->
+                    <div class="footer-mapa">
+                        <div class="footer-mapa-info">
+                            <h3>Cómo llegar</h3>
+                            <p>Cl. 65g Sur # 79B-26, Bosa, Bogotá D.C.</p>
+                        </div>
+                        <div class="footer-mapa-embed">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9333019625146!2d-74.186487!3d4.605964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9e43bb61d751%3A0x69174d74d0cf81c8!2zQ2wuIDY1ZyBTdXIgIyA3OUItMjYsIEJvc2EsIEJvZ290w6EsIEQuQy4sIEJvZ290w6EsIEJvZ290w6EsIEQuQy4!5e0!3m2!1ses-419!2sco!4v1782699841626!5m2!1ses-419!2sco"
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                title="Ubicación de Blood Tigers Cheer en el mapa"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-copy">
+                    <p>© 2026 Blood Tigers Cheer — Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+   <!-- script de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
